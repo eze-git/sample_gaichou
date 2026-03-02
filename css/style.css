@@ -1,0 +1,296 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   Base Styles & Reset
+   ========================================================================== */
+:root {
+    --primary-color: #1a2a40;
+    /* 信頼のネイビー */
+    --accent-color: #b32d2d;
+    /* 警告・情熱のレッド */
+    --cta-color: #ff9800;
+    /* 行動を促すオレンジ */
+    --text-color: #333;
+    --light-bg: #f8f9fa;
+    --white: #ffffff;
+    --font-main: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-main);
+    line-height: 1.6;
+    color: var(--text-color);
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ==========================================================================
+   Header & Navigation
+   ========================================================================== */
+header {
+    background: var(--white);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-inner {
+    height: 80px;
+}
+
+.tel-number {
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.tel-number:hover {
+    transform: scale(1.05);
+}
+
+/* ==========================================================================
+   Hero Section (超高CVR仕様)
+   ========================================================================== */
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.status-badge {
+    animation: bounce 2s infinite;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-10px);
+    }
+
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+.cta-button {
+    display: inline-block;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background: #e68a00 !important;
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4) !important;
+}
+
+.pulse {
+    animation: pulse-animation 2s infinite;
+}
+
+@keyframes pulse-animation {
+    0% {
+        box-shadow: 0 0 0 0px rgba(255, 152, 0, 0.7);
+    }
+
+    100% {
+        box-shadow: 0 0 0 20px rgba(255, 152, 0, 0);
+    }
+}
+
+/* ==========================================================================
+   Comparison Table (競合優位性)
+   ========================================================================== */
+.comparison-table {
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.comparison-table th,
+.comparison-table td {
+    padding: 20px 15px;
+    vertical-align: middle;
+}
+
+.comparison-table tr:nth-child(even) {
+    background-color: #fcfcfc;
+}
+
+/* 強調したい列（自社）の装飾 */
+.comparison-table td:nth-child(2) {
+    background-color: rgba(179, 45, 45, 0.05);
+    border-left: 2px solid var(--accent-color);
+    border-right: 2px solid var(--accent-color);
+}
+
+/* ==========================================================================
+   Craftman Section (信頼感)
+   ========================================================================== */
+.craftman-photo img {
+    box-shadow: 10px 10px 0px var(--primary-color);
+}
+
+.google-review {
+    border-left: 5px solid #4285F4;
+}
+
+/* ==========================================================================
+   Contact Form (成約特化型)
+   ========================================================================== */
+.contact-section {
+    background: #f1f4f7;
+    padding: 80px 0;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.required {
+    background: var(--accent-color);
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 2px 5px;
+    border-radius: 3px;
+    margin-left: 5px;
+    vertical-align: middle;
+}
+
+input[type="text"],
+input[type="tel"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 20px;
+    background: var(--cta-color);
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 0 #cc7a00;
+}
+
+.submit-btn:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 #cc7a00;
+}
+
+/* ==========================================================================
+   Responsive (スマホ最適化)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .header-inner {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 0;
+    }
+
+    .header-contact {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .hero h2 {
+        font-size: 1.8rem !important;
+    }
+
+    .craftman-section .container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .comparison-table {
+        font-size: 0.8rem;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+        padding: 10px 5px;
+    }
+
+    /* 固定フッター（スマホのみ） */
+    .mobile-footer-nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        z-index: 1100;
+    }
+
+    .mobile-footer-nav a {
+        flex: 1;
+        text-align: center;
+        padding: 15px 0;
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 0.9rem;
+    }
+
+    .nav-tel {
+        background: var(--accent-color);
+    }
+
+    .nav-line {
+        background: #06c755;
+    }
+}
+
+/* ==========================================================================
+   Utility
+   ========================================================================== */
+.section-title {
+    position: relative;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: var(--accent-color);
+}
