@@ -368,7 +368,7 @@ body {
 
 /* お悩みセクション全体 */
 .onayami-section {
-    padding: 80px 0;
+    padding: 60px 0;
     background-color: #fcfcfc;
 }
 
@@ -432,7 +432,7 @@ body {
 
 /* 対応場所セクション */
 .correspondence-section {
-    padding: 80px 0;
+    padding: 60px 0;
     background-color: #f0f2f5;
 }
 
@@ -488,7 +488,7 @@ body {
 
 /* 対策セクション */
 .measures-section {
-    padding: 80px 0;
+    padding: 60px 0;
     background-color: #fcfcfc;
 }
 
@@ -557,26 +557,50 @@ body {
 
 .policy-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 15px;
-    max-width: 900px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
 .policy-card {
     background: #fff;
-    padding: 20px;
-    border-left: 5px solid #b32d2d;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    font-size: 1rem;
+    padding: 30px 25px;
+    border-top: 5px solid #b32d2d;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: transform 0.3s ease;
+}
+
+.policy-card:hover {
+    transform: translateY(-5px);
 }
 
 .policy-card strong {
     color: #b32d2d;
     margin-right: 10px;
     white-space: nowrap;
+}
+
+.policy-card strong::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background: #b32d2d;
+    opacity: 0.3;
+}
+
+.policy-card span {
+    display: block;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #444;
 }
 
 /* --- 比較セクション --- */
@@ -642,7 +666,7 @@ body {
 
 /* --- 事例セクション --- */
 .cases-section {
-    padding: 80px 0;
+    padding: 60px 0;
     background: #f0f2f5;
 }
 
@@ -681,6 +705,7 @@ body {
 }
 
 #toggle-cases-btn {
+    color: #b32d2d;
     cursor: pointer;
     background: transparent;
     transition: all 0.3s ease;
@@ -808,7 +833,7 @@ body {
 
 /* --- レビュー --- */
 .reviews-section {
-    padding: 80px 0;
+    padding: 60px 0;
     background: #fcfcfc;
 }
 
@@ -926,12 +951,11 @@ body {
 
 /* --- 解決ステップ --- */
 .step-section {
-    padding: 80px 0;
+    padding: 60px 0;
     background: #f0f2f5;
 }
 
 .step-container {
-    margin: 60px 0;
     padding: 20px;
 }
 
@@ -985,6 +1009,11 @@ body {
 }
 
 /* --- よくある質問 --- */
+.faq-section {
+    padding: 60px 0;
+    background: #fcfcfc;
+}
+
 .faq-question {
     width: 100%;
     text-align: left;
@@ -1057,7 +1086,7 @@ body {
 
 /* --- 問合せ --- */
 .contact-section {
-    padding: 80px 0;
+    padding: 60px 0;
     background: #1a2a40;
     color: #fff;
     text-align: center;
@@ -1511,6 +1540,15 @@ body {
         font-size: 2rem;
     }
 
+    .policy-grid {
+        grid-template-columns: 1fr;
+        padding: 0 10px;
+    }
+
+    .policy-card {
+        padding: 25px 20px;
+    }
+
     .table-wrapper {
         overflow-x: visible;
         padding: 0;
@@ -1576,14 +1614,17 @@ body {
 
     .comparison-table td.samurai-column-body::before {
         content: "害鳥レスキュー侍";
-        /* アイコンを追加 */
         background: #b32d2d;
         color: #fff;
-        font-size: 0.8rem;
+        font-size: 0.75rem;
         padding: 2px 8px;
         border-radius: 4px;
         margin-right: 10px;
         font-weight: bold;
+
+        white-space: nowrap;
+        letter-spacing: -0.02em;
+        display: inline-block;
     }
 
     .comparison-table td:last-child {
@@ -1594,7 +1635,6 @@ body {
 
     .comparison-table td:last-child::before {
         content: "他社";
-        /* 比較しやすく */
         color: #999;
         font-weight: bold;
         margin-right: 10px;
@@ -1607,7 +1647,6 @@ body {
     .samurai-column-body.price,
     .samurai-column-body.bold {
         font-size: 1.2rem !important;
-        /* 少し大きく */
         color: #b32d2d;
         font-weight: 900;
     }
