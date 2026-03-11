@@ -324,6 +324,8 @@ body {
 }
 
 .en-price {
+    display: flex;
+    align-items: baseline;
     white-space: nowrap;
 }
 
@@ -337,7 +339,9 @@ body {
 }
 
 .price-num {
-    font-size: 4rem;
+    font-size: 4.5rem;
+    /* 少し大きく */
+    letter-spacing: -0.05em;
     font-weight: 900;
     color: #b32d2d;
     font-family: 'Arial Black', sans-serif;
@@ -1748,8 +1752,10 @@ body {
     }
 
     .comparison-table td.samurai-column-body {
-        background: #fff9f9;
         border: 2px solid #b32d2d !important;
+        background: #fff9f9;
+        /* すでに設定済みですが、さらに影をつけると浮き上がります */
+        box-shadow: 2px 2px 8px rgba(179, 45, 45, 0.1);
         border-radius: 10px;
         margin-bottom: 12px;
         position: relative;
