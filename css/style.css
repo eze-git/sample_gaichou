@@ -372,15 +372,30 @@ body {
 
 /* CTAボタン */
 .cta-button {
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    width: 100%;
+    max-width: 650px;
+    padding: 22px;
+
+    text-decoration: none;
+    border-radius: 50px;
     background: #ffeb3b;
     color: #333;
-    padding: 20px 40px;
     border-radius: 50px;
     font-weight: bold;
     font-size: 1.5rem;
-    text-decoration: none;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.hero-cta-area {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 40px;
 }
 
 .pulse {
@@ -1383,7 +1398,7 @@ body {
         display: flex;
         align-items: center;
         padding: 60px 0;
-        background: linear-gradient(90deg, #fff 40%, rgba(255, 255, 255, 0) 100%),
+        background: linear-gradient(90deg, #fff 30%, rgba(255, 255, 255, 0) 100%),
             url('../images/hero.png') center right / cover no-repeat;
     }
 
@@ -1463,11 +1478,6 @@ body {
         box-shadow: 0 15px 35px rgba(179, 45, 45, 0.3);
     }
 
-    .hero-cta-area {
-        margin-top: 50px;
-        text-align: left;
-    }
-
     .cta-button {
         font-size: 1.5rem;
         padding: 25px 60px;
@@ -1532,6 +1542,10 @@ body {
         font-size: 1.2rem;
         margin: 0;
         display: none;
+    }
+
+    .target-places {
+        gap: 10px;
     }
 
     /* --- ドロワーメニューのデザイン --- */
@@ -1642,6 +1656,10 @@ body {
 
     .price-num {
         font-size: 3rem;
+    }
+
+    .right {
+        display: none;
     }
 
     .right img {
