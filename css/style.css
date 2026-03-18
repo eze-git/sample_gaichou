@@ -50,20 +50,18 @@ body {
 }
 
 .section-title {
-    text-align: center;
-    font-size: 2.2rem;
-    font-weight: 900;
-    margin-bottom: 40px;
-    position: relative;
-    padding-bottom: 15px;
-    color: #1a2a40;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5px;
-    line-height: 1.8;
-    word-break: break-all;
     justify-content: center;
+    gap: 5px;
+    font-size: 2.2rem;
+    font-weight: 900;
+    line-height: 1.5;
+    margin-bottom: 40px;
+    color: #1a2a40;
+    position: relative;
+    padding-bottom: 15px;
 }
 
 .section-title::after {
@@ -95,7 +93,6 @@ body {
 /* ヘッダー全体 */
 .header {
     background-color: #ffffff;
-    background-image: linear-gradient(30deg, #f8f8f8 12%, transparent 12.5%, transparent 87%, #f8f8f8 87.5%, #f8f8f8), linear-gradient(150deg, #f8f8f8 12%, transparent 12.5%, transparent 87%, #f8f8f8 87.5%, #f8f8f8), linear-gradient(30deg, #f8f8f8 12%, transparent 12.5%, transparent 87%, #f8f8f8 87.5%, #f8f8f8), linear-gradient(150deg, #f8f8f8 12%, transparent 12.5%, transparent 87%, #f8f8f8 87.5%, #f8f8f8), linear-gradient(60deg, #f2f2f2 25%, transparent 25.5%, transparent 75%, #f2f2f2 75%, #f2f2f2), linear-gradient(60deg, #f2f2f2 25%, transparent 25.5%, transparent 75%, #f2f2f2 75%, #f2f2f2);
     background-size: 40px 70px;
 
     background-position: 0 0, 0 0, 20px 35px, 20px 35px, 0 0, 20px 35px;
@@ -398,20 +395,17 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
-
     width: 100%;
     max-width: 650px;
     padding: 22px;
-
     text-decoration: none;
-    border-radius: 50px;
     background: #ffeb3b;
     color: #333;
     border-radius: 50px;
     font-weight: bold;
     font-size: 1.5rem;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
 }
 
 .hero-cta-area {
@@ -1337,9 +1331,9 @@ body {
 .form-group textarea {
     width: 100%;
     padding: 12px;
-    border: 1px solid #ddd;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 1rem;
+    font-size: 16px;
 }
 
 .zip-note {
@@ -1505,7 +1499,6 @@ body {
     .sub-tagline {
         font-size: 1.2rem;
         padding: 5px 15px;
-        display: inline-block;
         margin-bottom: 20px;
     }
 
@@ -1593,27 +1586,26 @@ body {
         max-width: 1100px;
         margin-inline: auto;
     } */
-}
 
-/* ターゲット情報のリストにアイコンを添える */
-.target-info dt::before {
-    content: "●";
-    margin-right: 5px;
-    font-size: 0.7rem;
-    vertical-align: middle;
-}
 
-/* 料金ボックスにアニメーション */
-.price-box {
-    position: relative;
-    overflow: hidden;
-    transition: background 0.3s;
-}
+    /* ターゲット情報のリストにアイコンを添える */
+    .target-info dt::before {
+        content: "●";
+        margin-right: 5px;
+        font-size: 0.7rem;
+        vertical-align: middle;
+    }
 
-.target-card:hover .price-box {
-    background: #ffebeb;
-    /* ホバー時に少し赤みを強める */
+    /* 料金ボックスにアニメーション */
+    .price-box {
+        position: relative;
+        overflow: hidden;
+        transition: background 0.3s;
+    }
 
+    .target-card:hover .price-box {
+        background: #ffebeb;
+    }
 }
 
 @media (min-width: 769px) {
@@ -1665,7 +1657,6 @@ body {
         margin-bottom: 15px;
         white-space: normal;
         line-height: 1.4;
-        display: inline-block;
     }
 
     /* --- ドロワーメニューのデザイン --- */
@@ -1692,13 +1683,9 @@ body {
 
     .sp-nav ul {
         display: flex;
-        /* gridからflexに変更 */
         flex-direction: column;
-        /* 縦並びに */
         gap: 0;
-        /* リスト形式なので間隔を詰め、線で区切るのが一般的 */
         width: 100%;
-        /* 横幅いっぱい */
         margin: 0;
         padding: 0;
     }
@@ -1799,7 +1786,6 @@ body {
     }
 
     .onayami-grid {
-        display: grid;
         grid-template-columns: 1fr;
         gap: 25px;
         margin-top: 30px;
@@ -2050,7 +2036,6 @@ body {
 
     .target-info dd {
         font-size: 0.8rem;
-        /* 小さな画面でも読みやすく */
     }
 
     .case-grid {
